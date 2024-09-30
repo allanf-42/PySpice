@@ -1,0 +1,400 @@
+##################################################################
+
+		#     # #     #   ###      #     #####
+		 #   #  #     #  #   #    ##    #     #
+		  # #   #     # #     #  # #    #     #
+		   #    ####### #     #    #     #####
+		  # #   #     # #     #    #    #     #
+		 #   #  #     #  #   #     #    #     #
+		#     # #     #   ###    #####   #####
+
+##################################################################
+*
+*    Monte Carlo analysis using HSPICE circuit simulator
+*    and X-FAB's statistical device models
+*
+##################################################################
+
+
+0.  Contents
+============
+
+1 - Basics about XFAB's statistical models
+2 - Simulation of process variation
+3 - Simulation of device matching
+4 - List of statistical Models
+5 - Simulation example
+
+
+1.  Basics about XFAB's statistical models
+==========================================
+
+1.1  Monte Carlo analysis overview
+----------------------------------
+
+Monte Carlo analysis can be performed as a means to understand a circuit's
+tolerance to process variation and statistical mismatch.
+A large number of spice simulations (.DC, .AC, .TRAN etc.) are run, all having
+different, randomly-generated model parameters. It can be thought of as 
+randomly selecting points in the possible parameter space, according to 
+predefined distributions.
+The results of these simulations can be displayed as histogram, scatter plot
+or a family of curves.
+
+Monte Carlo analysis should go hand in hand with worst-case-corner simulation
+and can be used to verify or improve on these simulation results.
+
+To use Monte Carlo analysis a special prepared set of device models is required.
+Two different types of simulation are supported by XFAB's statistical model set.
+
+1) Simulation of process parameter variation.
+2) Simulation of statistical device matching.
+
+All related HSPICE commands and netlist options are described in the HSPICE
+Simulation and Analysis User Guide Chapter "Statistical Analysis and
+Optimization".
+
+
+
+2.  Simulation of process variation (lot)
+=========================================
+
+Simulator vendors use different names for this.
+
+	* lot to lot variation
+	* wafer to wafer variation
+	* global variation
+	* major distribution
+
+All these terms mean the same thing.
+A process parameter get a new value every simulation run. During this run, all
+instances of this parameter have the same value.
+
+A very simple example should make this comprehensible:
+Gate oxide thickness will vary from run to run. During a single run,
+all devices in the same circuit share the same value for gate oxide thickness.
+On the next run, a new value is picked up from the predefined parameter range.
+
+
+2.1  Simulator statements to enable process simulation
+------------------------------------------------------
+
+HSPICE makes no difference between "lot" and "dev" variation by default.
+Therefore a way to select between "lot" and "dev" was introduced.
+To select process simulation (lot/global) the following two parameter 
+statements must be added to the netlist by the user:
+
+.param __LOT__=1
+.param __DEV__=0
+
+
+2.2  Possible types of process parameter distributions
+------------------------------------------------------
+
+The statistical model set for process parameters was made in this way that MC
+analysis covers the whole possible parameter range which is defined by the
+worst case corner edge points.
+The process related parameters can follow either uniform or gaussian distribution.
+
+
+
+2.2.1 Uniform distribution
+
+Uniform distribution of process parameters is very artificial. It has nothing 
+to do with real process parameter variation!
+All values of the possible parameter range (the region between wp and ws points)
+will occur with the same possibility.
+
+To enable the uniform parameter set please select the 
+case "mc_u" in the .lib statement:
+.lib '/path/to/param.lib' 3s
+.lib '/path/to/xh018.lib' mc_u
+
+This distribution can be used to make statistical range analysis which is an 
+ideal extension to the classic corner analysis.
+The advantage over corner analysis is that not only the min/max points are 
+simulated. The whole possible parameter range between the corners is covered.
+A parameter value, somewhere between min and max, at which the results are worse,
+can be found on this way.
+Another advantage is that it is impossible to forget a critical parameter combination 
+because the values of the single parameters are selected randomly.
+The covered parameter range is set up by the parameter xsf__. Some values for this parameter
+are predefined in the file param.lib
+The user can choose between +-3sigma or +-6sigma variation by selecting the cases 3s or 6s.
+
+
+
+2.2.2 Gaussian distribution
+
+Simulating uniform parameter distribution is a very artificial approach.
+To make more realistic simulations, the provided parameter set with gaussian 
+distributed process parameters can be used.
+
+To enable the gaussian distributed parameter set please select the 
+case "mc_g" in the .lib statement:
+
+.lib '/path/to/xh018.lib' mc_g
+
+Using the gaussian distribution is closer to the reality.
+The edge values will occur with low possibility now.
+(according to the possibility which is described by gaussian distribution)
+This approximates the reality more than the artificial uniform distribution.
+But there is a disadvantage too. A large amount of simulation runs is
+required to cover the whole range of possible parameter values.
+Large can be 10000 in some cases!
+
+
+
+3.  Simulation of device matching (dev)
+=======================================
+
+Simulator vendors use different names for this.
+
+	* local variation
+	* dev variation
+	* matching / mismatch
+
+All these terms mean the same thing:
+Two identical designed elements do not have identical properties during a
+simulation run.
+The statistical mismatch of identical designed devices is simulated.
+Systematical mismatch is not modeled!
+
+Matching parameters, which are included in the models, are derived from real 
+measurements of special matching test structures. They are always Gaussian 
+distributed. 
+Thats why all matching parameters have everytime a Gaussian distribution 
+-even if uniform parameter set is selected! 
+Otherwise matching simulation would be totally erroneous!
+
+
+
+3.1 Be careful
+--------------
+All matching parameters were developed using test structures with perfect 
+designed layout. This means that these parameters can only be reached with an
+optimised layout.
+
+The statistical mismatch, which is described in the models, is only proportional 
+to 1/sqrt(m*DeviceArea). The factor m is the device multiplier. (how many 
+identical devices are in parallel)
+
+Other effects, which are not included in the spice models, may have 
+a larger influence to device matching as the modeled statistical mismatch.
+Some keywords are: dummy structures, placement, length of connections,
+metal coverage, device orientation, temperature gradients and so on.
+All these things are NOT considered in the matching models.
+They calculate the mismatch only via the device area!
+
+
+
+3.2 Running the matching simulation
+-----------------------------------
+Use following simulator statement to select matching simulation:
+
+.param __LOT__=0
+.param __DEV__=1
+
+Please find further information in the example below or in the simulator
+reference guide.
+
+
+4.  List of Monte Carlo Models
+==============================
+
+X-FAB provides Monte Carlo models for the most important devices.
+(Not for all devices!)
+Some models don't have matching parameters.
+See following table for details:
+
+|-----------------------------------------------------------------------|
+| DIODES								|
+|-----------------------|-----------------------|-----------------------|
+|	Device 		|    process (lot)	|	matching (dev)	|
+|-----------------------|-----------------------|-----------------------|
+|	dn		|	   x		|	   		|
+|	dp		|	   x		|	   		|
+|	dnw		|	   x		|	   		|
+|	dn3		|	   x		|	   		|
+|	dp3		|	   x		|	   		|
+|	dnw3		|	   x		|	   		|
+|	dpdnw		|	   x		|	   		|
+|	ddnwmv		|	   x		|	   		|
+|	ddnw		|	   x		|	   		|
+|	dipdnwmv	|	   x		|	   		|
+|	dipdnw		|	   x   		|	   		|
+|	dnhpw		|	   x		|	   		|
+|	dphnw		|	   x		|	   		|
+|	dhpw		|	   x		|	   		|
+|	dhnw		|	   x		|	   		|
+|			|	   		|	   		|
+|-----------------------------------------------------------------------|
+| RESISTORS								|
+|-----------------------|-----------------------|-----------------------|
+|	Device 		|    process (lot)	|	matching (dev)	|
+|-----------------------|-----------------------|-----------------------|
+|	rdn		|	   x		|	   x 		|
+|	rdp		|	   x		|	   x 		|
+|	rnw		|	   x		|	   x 		|
+|	rdn3		|	   x		|	   x 		|
+|	rdp3		|	   x		|	   x 		|
+|	rnw3		|	   x		|	   x 		|
+|	rdnwmv		|	   x		|	    		|
+|	rnp1		|	   x		|	   x 		|
+|	rpp1		|	   x		|	   x 		|
+|	rpp1s		|	   x		|	   x 		|
+|	rnp1h		|	   x		|	   x 		|
+|			|	   		|	   		|
+|	rm1		|	   x		|	    		|
+|	rm2		|	   x		|	    		|
+|	rm3		|	   x		|	    		|
+|	rm4		|	   x		|	    		|
+|	rm5		|	   x		|	    		|
+|	rmtp		|	   x		|	    		|
+|	rmtpl		|	   x		|	    		|
+|			|	   		|	   		|
+|-----------------------------------------------------------------------|
+| CAPACITORS								|
+|-----------------------|-----------------------|-----------------------|
+|	Device 		|    process (lot)	|	matching (dev)	|
+|-----------------------|-----------------------|-----------------------|
+|	csandwt3	|	   x		|	   		|
+|	csandwt4	|	   x		|	   		|
+|	csandwt5	|	   x		|	   		|
+|	cmm		|	   x		|	   x		|
+|	cdmm		|	   x		|	   		|
+|	ctmm		|	   x		|	   		|
+|			|	   		|	   		|
+|-----------------------------------------------------------------------|
+| MOSFETS								|
+|-----------------------|-----------------------|-----------------------|
+|	Device 		|    process (lot)	|	matching (dev)	|
+|-----------------------|-----------------------|-----------------------|
+|	ne		|	   x		|	   x		|
+|	pe		|	   x		|	   x		|
+|	nei		|	   x		|	   x		|
+|	pei		|	   x		|	   x		|
+|			|	   		|	   		|
+|	ne3		|	   x		|	   x		|
+|	pe3		|	   x		|	   x		|
+|	ne3i		|	   x		|	   x		|
+|	pe3i		|	   x		|	   x		|
+|			|	   		|	   		|
+|	nn3		|	   x		|	   		|
+|	nd3		|	   x		|	   		|
+|	nd3i		|	   x		|	   		|
+|			|	   		|	   		|
+|	nmma		|	   x		|	   		|
+|	pmma		|	   x		|	   		|
+|			|	   		|	   		|
+|	nedi		|	   x		|	   		|
+|	nedia		|	   x		|	   		|
+|	ped2		|	   x		|	   		|
+|			|	   		|	   		|
+|-----------------------|-----------------------|-----------------------|
+| BIPOLAR								|
+|-----------------------|-----------------------|-----------------------|
+|	Device 		|    process (lot)	|	matching (dev)	|
+|-----------------------|-----------------------|-----------------------|
+|	qpva     	|	   x		|	   x		|
+|	qpvb 		|	   x		|	   x		|
+|	qpvc 		|	   x		|	   x		|
+|	 		|	   		|	   		|
+|	qpva3		|	   x		|	   x		|
+|	qpvb3		|	   x		|	   x		|
+|	qpvc3		|	   x		|	   x		|
+|	 		|	   		|	   		|
+|	qnva		|	   		|	   		|
+|			|	   		|	   		|
+|-----------------------------------------------------------------------|
+
+
+
+
+
+
+
+5.  Simulation example
+======================
+
+This small example should show how to setup a Monte Carlo Simulation.
+
+##################################################################
+rnp1.sp:
+
+.title "HSPICE example for xh018: rnp1"
+
+* Start Value of pseudo random number generator:
+.option TNOM=27 SEED=1453 NOMOD=0 BRIEF=1 LIST
+
+
+* include lib for gaussian distribution:
+.lib '$T_DIR/hspiceS/xh018/lp3mos/xh018.lib' mc_g
+
+* include lib for uniform distribution:
+*.lib '$T_DIR/hspiceS/xh018/lp3mos/param.lib' 3s
+*.lib '$T_DIR/hspiceS/xh018/lp3mos/xh018.lib' mc_u
+
+* enable printout
+.option BRIEF=0
+
+
+* set to 1 to enable dev-variation, otherwise zero!
+.param __DEV__=0
+
+* set to 1 to enable lot-variation, otherwise zero!
+.param __LOT__=1
+
+
+
+VVCC VCC 0 DC 5V
+
+* --------------------------------------
+R1   VCC N1 1m
+XR1  N1 0  rnp1 w=2u l=20u
+
+R2   VCC N2 1m
+XR2  N2 0  rnp1 w=4u l=40u
+
+
+* measure resistance:
+.measure DC rnp1_2x20    PARAM = 'V(N1)/I1(R1)'
+.measure DC rnp1_4x40    PARAM = 'V(N2)/I1(R2)'
+
+
+* mc-simulation, 500 runs:
+.DC VVCC 4 5 1 sweep monte=500
+.END
+
+##################################################################
+
+
+user@host 
+=> hspice  rnp1.sp -o rnp1.lis
+
+
+##################################################################
+rnp1.lis:
+
+ ... many lines deleted ...
+
+
+   rnp1_2x20=  3.2169E+03
+   rnp1_4x40=  3.1602E+03
+
+   meas_variable = rnp1_2x20
+   mean  =   3.3986k  varian =  69.2571k
+   sigma = 263.1674   avgdev = 210.6161 
+   max   =   4.1215k  min    =   2.6923k
+    1-sigma = 263.1674  median =   3.4034k
+
+   meas_variable = rnp1_4x40
+   mean  =   3.3353k  varian =  66.4862k
+   sigma = 257.8492   avgdev = 206.2032 
+   max   =   4.0272k  min    =   2.6563k
+    1-sigma = 257.8492  median =   3.3390k
+
+
+
+##################################################################
+

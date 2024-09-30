@@ -1,0 +1,37 @@
+
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : all cap
+* Process   : xh018
+* Module    : lp3
+* Spec.     : PS_018_03
+* Revision  : 2.0.2; 2010-09-30
+* ----------------------------------------------------------------------
+*             TYPICAL MEAN CONDITION ( Typical capacitance ) 
+* ----------------------------------------------------------------------
+*
+.param
+*csandwt3:
++ca_csandwt3=1.300e-04
++cp_csandwt3=3.700e-11
+*csandwt4:
++ca_csandwt4=1.600e-04
++cp_csandwt4=5.200e-11
+*csandwt5:
++ca_csandwt5=2.000e-04
++cp_csandwt5=7.400e-11
+*cmm:
++ca_cmm=1.000e-03
++cp_cmm=1.700e-10
++AC_cmm=0.000e+00
+*cdmm:
++ca_cdmm=2.000e-03
++cp_cdmm=3.400e-10
+*ctmm:
++ca_ctmm=3.000e-03
++cp_ctmm=5.100e-10
+*cp1sub:
++ca_cp1sub=8.850e-05
++cp_cp1sub=1.560e-11

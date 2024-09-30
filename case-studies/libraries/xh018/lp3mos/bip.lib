@@ -1,0 +1,40 @@
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : Bipolar
+* Process   : xh018
+* Module    : lp3mos
+* Spec.     : PS_018_03
+* Revision  : 2.0.7; 2010-11-26
+* ----------------------------------------------------------------------
+.lib tm
+.include './models/bip/tm_bip.par'
+.include './models/bip/qpva.mod'
+.include './models/bip/qpvb.mod'
+.include './models/bip/qpvc.mod'
+.include './models/bip/qpva3.mod'
+.include './models/bip/qpvb3.mod'
+.include './models/bip/qpvc3.mod'
+.include './models/bip/qnva.mod'
+.endl
+.lib wp
+.include './models/bip/wp_bip.par'
+.include './models/bip/qpva.mod'
+.include './models/bip/qpvb.mod'
+.include './models/bip/qpvc.mod'
+.include './models/bip/qpva3.mod'
+.include './models/bip/qpvb3.mod'
+.include './models/bip/qpvc3.mod'
+.include './models/bip/qnva.mod'
+.endl
+.lib ws
+.include './models/bip/ws_bip.par'
+.include './models/bip/qpva.mod'
+.include './models/bip/qpvb.mod'
+.include './models/bip/qpvc.mod'
+.include './models/bip/qpva3.mod'
+.include './models/bip/qpvb3.mod'
+.include './models/bip/qpvc3.mod'
+.include './models/bip/qnva.mod'
+.endl

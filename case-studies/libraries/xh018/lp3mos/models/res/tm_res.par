@@ -1,0 +1,133 @@
+
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : all res
+* Process   : xh018
+* Module    : lp3
+* Spec.     : PS_018_03
+* Revision  : 2.0.2; 2010-09-30
+* ----------------------------------------------------------------------
+*             TYPICAL MEAN CONDITION ( Typical resistance ) 
+* ----------------------------------------------------------------------
+*
+.param
+*rdn:
++AR_rdn=0.000e+00
+*rdp:
++AR_rdp=0.000e+00
+*rnw:
++AR_rnw=0.000e+00
+*rdn3:
++AR_rdn3=0.000e+00
+*rdp3:
++AR_rdp3=0.000e+00
+*rnw3:
++AR_rnw3=0.000e+00
+*rdnwmv:
++AR_rdnwmv=0.000e+00
+*rnp1:
++AR_rnp1=0.000e+00
+*rpp1:
++AR_rpp1=0.000e+00
+*rpp1s:
++AR_rpp1s=0.000e+00
+*rnp1h:
++AR_rnp1h=0.000e+00
+*rctdn:
++rsh_rctdn=1.100e+01
++dw_rctdn=0.000e+00
++dlr_rctdn=0.000e+00
+*rctdp:
++rsh_rctdp=1.100e+01
++dw_rctdp=0.000e+00
++dlr_rctdp=0.000e+00
+*rsildn:
++rsh_rsildn=5.000e+00
++dw_rsildn=-1.500e-08
++dlr_rsildn=0.000e+00
+*rsildp:
++rsh_rsildp=6.200e+00
++dw_rsildp=-3.000e-08
++dlr_rsildp=0.000e+00
+*rdiffn:
++rsh_rdiffn=6.200e+01
++dw_rdiffn=-1.500e-08
++dlr_rdiffn=0.000e+00
+*rdiffp:
++rsh_rdiffp=1.350e+02
++dw_rdiffp=-3.000e-08
++dlr_rdiffp=0.000e+00
+*rdiffn3:
++rsh_rdiffn3=6.200e+01
++dw_rdiffn3=-1.500e-08
++dlr_rdiffn3=0.000e+00
+*rdiffp3:
++rsh_rdiffp3=1.350e+02
++dw_rdiffp3=-3.000e-08
++dlr_rdiffp3=0.000e+00
+*rctp1:
++rsh_rctp1=9.500e+00
++dw_rctp1=0.000e+00
++dlr_rctp1=0.000e+00
+*rsilnp1:
++rsh_rsilnp1=6.700e+00
++dw_rsilnp1=3.500e-08
++dlr_rsilnp1=0.000e+00
+*rsilpp1:
++rsh_rsilpp1=6.300e+00
++dw_rsilpp1=2.000e-08
++dlr_rsilpp1=0.000e+00
+*rdnwellmv:
++rsh_rdnwellmv=1.500e+03
++dw_rdnwellmv=-1.100e-07
++dlr_rdnwellmv=0.000e+00
+*rnpoly1:
++rsh_rnpoly1=3.300e+02
++dw_rnpoly1=3.500e-08
++dlr_rnpoly1=0.000e+00
+*rppoly1:
++rsh_rppoly1=2.800e+02
++dw_rppoly1=2.000e-08
++dlr_rppoly1=0.000e+00
+*rnpoly1h:
++rsh_rnpoly1h=6.700e+03
++dw_rnpoly1h=1.200e-07
++dlr_rnpoly1h=0.000e+00
+*rnwell:
++rsh_rnwell=9.400e+02
++dw_rnwell=1.400e-07
++dlr_rnwell=0.000e+00
+*rnwell3:
++rsh_rnwell3=9.400e+02
++dw_rnwell3=1.400e-07
++dlr_rnwell3=0.000e+00
+*rmet1:
++rsh_rmet1=9.500e-02
++dw_rmet1=3.000e-08
++dlr_rmet1=0.000e+00
+*rmet2:
++rsh_rmet2=8.500e-02
++dw_rmet2=1.500e-08
++dlr_rmet2=0.000e+00
+*rmet3:
++rsh_rmet3=8.500e-02
++dw_rmet3=1.500e-08
++dlr_rmet3=0.000e+00
+*rmet4:
++rsh_rmet4=8.500e-02
++dw_rmet4=1.500e-08
++dlr_rmet4=0.000e+00
+*rmet5:
++rsh_rmet5=8.500e-02
++dw_rmet5=1.500e-08
++dlr_rmet5=0.000e+00
+*rmettp:
++rsh_rmettp=4.300e-02
++dw_rmettp=4.500e-08
++dlr_rmettp=0.000e+00
+*rmettpl:
++rsh_rmettpl=9.500e-03
++dw_rmettpl=0.000e+00
++dlr_rmettpl=0.000e+00

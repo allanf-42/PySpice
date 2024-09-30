@@ -1,0 +1,54 @@
+
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : all dio
+* Process   : xh018
+* Module    : lp3
+* Spec.     : PS_018_03
+* Revision  : 2.0.2; 2010-09-30
+* ----------------------------------------------------------------------
+*             WORST CASE POWER CONDITION ( Low capacitance ) 
+* ----------------------------------------------------------------------
+*
+.param
+*dn:
++cj_dn=max(9.856e-04,1.120e-03-(xsf__dio*2.240e-05))
++cjsw_dn=max(1.976e-10,2.600e-10-(xsf__dio*1.040e-11))
+*dp:
++cj_dp=max(8.624e-04,9.800e-04-(xsf__dio*1.960e-05))
++cjsw_dp=max(1.292e-10,1.700e-10-(xsf__dio*6.800e-12))
+*dnw:
++cj_dnw=max(1.056e-04,1.200e-04-(xsf__dio*2.400e-06))
++cjsw_dnw=max(3.572e-10,4.700e-10-(xsf__dio*1.880e-11))
+*dn3:
++cj_dn3=max(7.656e-04,8.700e-04-(xsf__dio*1.740e-05))
++cjsw_dn3=max(1.444e-10,1.900e-10-(xsf__dio*7.600e-12))
+*dp3:
++cj_dp3=max(8.800e-04,1.000e-03-(xsf__dio*2.000e-05))
++cjsw_dp3=max(1.368e-10,1.800e-10-(xsf__dio*7.200e-12))
+*dnw3:
++cj_dnw3=max(1.056e-04,1.200e-04-(xsf__dio*2.400e-06))
++cjsw_dnw3=max(3.572e-10,4.700e-10-(xsf__dio*1.880e-11))
+*dpdnw:
++cj_dpdnw=max(8.624e-04,9.800e-04-(xsf__dio*1.960e-05))
++cjsw_dpdnw=max(1.292e-10,1.700e-10-(xsf__dio*6.800e-12))
+*ddnw:
++cj_ddnw=max(7.040e-05,8.000e-05-(xsf__dio*1.600e-06))
++cjsw_ddnw=max(5.472e-10,7.200e-10-(xsf__dio*2.880e-11))
+*dipdnw:
++cj_dipdnw=max(2.904e-04,3.300e-04-(xsf__dio*6.600e-06))
++cjsw_dipdnw=max(2.888e-10,3.800e-10-(xsf__dio*1.520e-11))
+*dnhpw:
++cj_dnhpw=max(6.864e-04,7.800e-04-(xsf__dio*1.560e-05))
++cjsw_dnhpw=max(6.840e-10,9.000e-10-(xsf__dio*3.600e-11))
+*dphnw:
++cj_dphnw=max(7.304e-04,8.300e-04-(xsf__dio*1.660e-05))
++cjsw_dphnw=max(5.320e-10,7.000e-10-(xsf__dio*2.800e-11))
+*dhpw:
++cj_dhpw=max(1.584e-04,1.800e-04-(xsf__dio*3.600e-06))
++cjsw_dhpw=max(3.344e-10,4.400e-10-(xsf__dio*1.760e-11))
+*dhnw:
++cj_dhnw=max(9.680e-05,1.100e-04-(xsf__dio*2.200e-06))
++cjsw_dhnw=max(1.824e-10,2.400e-10-(xsf__dio*9.600e-12))
