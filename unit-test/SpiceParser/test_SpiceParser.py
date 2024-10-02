@@ -23,6 +23,7 @@
 from pathlib import Path
 import os
 import unittest
+import difflib
 
 ####################################################################################################
 
@@ -66,25 +67,47 @@ class TestSpiceParser(unittest.TestCase):
         with open(cls.path.joinpath('hsada4077.cir')) as fh:
             cls.hsada4077 = fh.read()
 
-    @unittest.skip('')
+    def normalize_netlist(self, netlist):
+        """
+        Normalize a netlist removing unnecessary white spaces e converting characters to small cases
+        Isso ajuda na comparação, ignorando diferenças de formatação.
+        """
+        lines = netlist.lower().splitlines()
+        normalized = '\n'.join(line.strip() for line in lines if line.strip() and not line.strip().startswith('*'))
+        return normalized
+
     def test_parser(self):
-        for source in (hsop77, hsada4077):
-            results = list(map(circuit_gft, [(source, -1), (source, 1)]))
-            self.assertEqual(len(results), 2)
-            values = str(results[0])
-            self.assertNotRegex(values, r'(\.ic)')
+        """
+        Test if the original netlist and the netlist obtainer after parsing are equivalent.
+        """
+        # Test the circuits OP77 and ADA4077
+        for original_netlist in [self.hsop77, self.hsada4077]:
+            # Parse the netlist
+            parser = SpiceParser(source=original_netlist)
+            circuit = parser.build_circuit()
 
-    ##############################################
+            # Generate the netlist from from PySpice
+            generated_netlist = str(circuit)
 
-    @unittest.skip('')
-    def test_subcircuit(self):
-        circuit = Circuit('')
-        circuit.include('.../mosdriver.lib')
-        circuit.X('test', 'mosdriver', '0', '1', '2', '3', '4', '5')
-        circuit.BehavioralSource('test', '1', '0', voltage_expression='if(0, 0, 1)', smoothbsrc=1)
-        print(circuit)
+            # Normalize both netlists for comparsion
+            normalized_original = self.normalize_netlist(original_netlist)
+            normalized_generated = self.normalize_netlist(generated_netlist)
 
-####################################################################################################
+            print(normalized_original)
+            print(normalized_generated)
+
+            # Use difflib to obtain differences, if existent
+            diff = difflib.unified_diff(
+                normalized_original.splitlines(),
+                normalized_generated.splitlines(),
+                fromfile='original_netlist',
+                tofile='generated_netlist',
+                lineterm=''
+            )
+
+            differences = '\n'.join(diff)
+            self.assertEqual(normalized_original, normalized_generated,
+                             msg=f"Differences found in the netlist:\n{differences}")
 
 if __name__ == '__main__':
     unittest.main()
