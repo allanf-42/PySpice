@@ -53,8 +53,18 @@ def circuit_gft(prb):
 ####################################################################################################
 
 class TestSpiceParser(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        """
+        Load the .cir files containing the netlists used in tests.
+        """
+        cls.path = Path(__file__).parent
 
-    ##############################################
+        with open(cls.path.joinpath('hsop77.cir')) as fh:
+            cls.hsop77 = fh.read()
+
+        with open(cls.path.joinpath('hsada4077.cir')) as fh:
+            cls.hsada4077 = fh.read()
 
     @unittest.skip('')
     def test_parser(self):
