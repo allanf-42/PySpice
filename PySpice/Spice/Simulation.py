@@ -1139,7 +1139,8 @@ class CircuitSimulator(CircuitSimulation):
         """Return a :obj:`PySpice.Spice.Simulation.SubprocessCircuitSimulator` or
         :obj:`PySpice.Spice.Simulation.NgSpiceSharedCircuitSimulator` instance depending of the
         value of the *simulator* parameter: ``subprocess`` or ``shared``, respectively. If this
-        parameter is not specified then a subprocess simulator is returned.
+        parameter is not specified then the simulator defined in the attribute DEFAULT_SIMULATOR 
+        is returned.
 
         """
 
