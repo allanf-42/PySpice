@@ -618,7 +618,7 @@ class NgSpiceShared:
         prefix, _, content = message.partition(' ')
         if prefix == 'stderr':
             self._stderr.append(content)
-            if content.startswith('Warning:'):
+            if content.startswith('Warning:') or content.startswith("Note:"):
                 func = self._logger.warning
             # elif content.startswith('Warning:'):
             else:
