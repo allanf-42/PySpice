@@ -1,24 +1,24 @@
 FDA second order low pass filter with MFB topology 180nm
 
 * Typical simulation 
-.lib ..\lib\xh018\lp3mos\xh018.lib tm
+.lib ../lib/xh018/lp3mos/xh018.lib tm
 
 * Corners simulations 
-*.lib ..\lib\xh018\lp3mos\xh018.lib wp
-*.lib ..\lib\xh018\lp3mos\xh018.lib ws
-*.lib ..\lib\xh018\lp3mos\xh018.lib wo
-*.lib ..\lib\xh018\lp3mos\xh018.lib wz
+*.lib ../lib/xh018/lp3mos/xh018.lib wp
+*.lib ../lib/xh018/lp3mos/xh018.lib ws
+*.lib ../lib/xh018/lp3mos/xh018.lib wo
+*.lib ../lib/xh018/lp3mos/xh018.lib wz
 
 * Process simulation (lot/global variation)
 *.param __LOT__ = 1
 *.param __DEV__ = 0
 
 * Monte Carlo simulation (uniform)
-*.lib ..\lib\xh018\lp3mos\xh018.lib mc_u
-*.lib ..\lib\xh018\lp3mos\param.lib 3s
+*.lib ../lib/xh018/lp3mos/xh018.lib mc_u
+*.lib ../lib/xh018/lp3mos/param.lib 3s
 
 * Monte Carlo simulation (gaussian)
-*.lib ..\lib\xh018\lp3mos\xh018.lib mc_g
+*.lib ../lib/xh018/lp3mos/xh018.lib mc_g
 
 * Device matching
 * .param __LOT__=0
