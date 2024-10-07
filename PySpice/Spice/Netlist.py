@@ -1185,7 +1185,7 @@ class Circuit(Netlist):
         if path not in self._includes:
             self._includes.append(path)
         else:
-            self._logger.warn("Duplicated include")
+            self._logger.warning("Duplicated include")
 
     ##############################################
 
@@ -1195,7 +1195,7 @@ class Circuit(Netlist):
         if v not in self._libs:
             self._libs.append(v)
         else:
-            self._logger.warn(f"Duplicated lib {v}")
+            self._logger.warning(f"Duplicated lib {v}")
 
     ##############################################
 

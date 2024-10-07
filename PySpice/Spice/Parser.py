@@ -826,9 +826,7 @@ class SpiceParser:
 
         self._path = path  # For use by _parse() when recursing through files.
 
-        if path is not None:
-            #os.chdir(os.path.dirname(self._path))
-            
+        if path is not None:           
             with open(str(path), 'r') as f:
                 raw_lines = f.readlines()
         elif source is not None:

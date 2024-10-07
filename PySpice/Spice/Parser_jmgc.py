@@ -1378,7 +1378,7 @@ class SpiceParser:
                     # .lib filename libname
                     # .func .csparam .temp .if
                     # { expr } are allowed in .model lines and in device lines.
-                    self._logger.warn('Parser ignored: {}'.format(line))
+                    self._logger.warning('Parser ignored: {}'.format(line))
             else:
                 try:
                     element = Element(line)

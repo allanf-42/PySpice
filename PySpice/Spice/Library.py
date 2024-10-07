@@ -82,7 +82,7 @@ class SpiceLibrary:
                         self._models.update(lib._models)
                 except Exception as e:
                     # Parse problem with this file, so skip it and keep going.
-                    self._logger.warn("Problem parsing {path} - {e}".format(**locals()))
+                    self._logger.warning("Problem parsing {path} - {e}".format(**locals()))
                     continue
                 if spice_parser.is_only_subcircuit():
                     for subcircuit in spice_parser.subcircuits:
@@ -113,7 +113,7 @@ class SpiceLibrary:
             return self._models[name]
         else:
             # print('Library {} not found in {}'.format(name, self._directory))
-            # self._logger.warn('Library {} not found in {}'.format(name, self._directory))
+            # self._logger.warning('Library {} not found in {}'.format(name, self._directory))
             raise KeyError(name)
 
     ##############################################
