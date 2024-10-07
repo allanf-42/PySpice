@@ -1,5 +1,5 @@
 from PySpice.Spice.Parser import SpiceParser
 
-parser = SpiceParser(path="netlist.sp")
+parser = SpiceParser(path="case-studies/full-diff-filter/netlist.sp")
 circuit = parser.build_circuit()
 print(circuit)
