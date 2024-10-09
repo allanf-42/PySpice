@@ -1,0 +1,97 @@
+
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : all bip
+* Process   : xh018
+* Module    : lp3
+* Spec.     : PS_018_03
+* Revision  : 2.0.2; 2010-09-30
+* ----------------------------------------------------------------------
+*             WORST CASE SPEED CONDITION ( Slow BJT ) 
+* ----------------------------------------------------------------------
+*
+.param
+*qpva:
++dis_qpva=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++dbf_qpva=max(5.000e-01,1.000e+00-(xsf__bip*8.333e-02))
++dvaf_qpva=min(1.400e+00,1.000e+00+(xsf__bip*6.667e-02))
++dikf_qpva=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++drb_qpva=min(1.120e+00,1.000e+00+(xsf__bip*2.000e-02))
++dcje_qpva=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++dcjc_qpva=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++Abf_qpva=0.000e+00
++Ais_qpva=0.000e+00
+*qpvb:
++dis_qpvb=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++dbf_qpvb=max(5.000e-01,1.000e+00-(xsf__bip*8.333e-02))
++dvaf_qpvb=min(1.400e+00,1.000e+00+(xsf__bip*6.667e-02))
++dikf_qpvb=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++drb_qpvb=min(1.120e+00,1.000e+00+(xsf__bip*2.000e-02))
++dcje_qpvb=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++dcjc_qpvb=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++Abf_qpvb=0.000e+00
++Ais_qpvb=0.000e+00
+*qpvc:
++dis_qpvc=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++dbf_qpvc=max(5.000e-01,1.000e+00-(xsf__bip*8.333e-02))
++dvaf_qpvc=min(1.400e+00,1.000e+00+(xsf__bip*6.667e-02))
++dikf_qpvc=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++drb_qpvc=min(1.120e+00,1.000e+00+(xsf__bip*2.000e-02))
++dcje_qpvc=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++dcjc_qpvc=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++Abf_qpvc=0.000e+00
++Ais_qpvc=0.000e+00
++Arb_qpvc=0.000e+00
+*qpva3:
++dis_qpva3=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++dbf_qpva3=max(5.000e-01,1.000e+00-(xsf__bip*8.333e-02))
++dvaf_qpva3=min(1.400e+00,1.000e+00+(xsf__bip*6.667e-02))
++dikf_qpva3=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++drb_qpva3=min(1.120e+00,1.000e+00+(xsf__bip*2.000e-02))
++dcje_qpva3=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++dcjc_qpva3=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++Abf_qpva3=0.000e+00
++Ais_qpva3=0.000e+00
++Aise_qpva3=0.000e+00
+*qpvb3:
++dis_qpvb3=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++dbf_qpvb3=max(5.000e-01,1.000e+00-(xsf__bip*8.333e-02))
++dvaf_qpvb3=min(1.400e+00,1.000e+00+(xsf__bip*6.667e-02))
++dikf_qpvb3=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++drb_qpvb3=min(1.120e+00,1.000e+00+(xsf__bip*2.000e-02))
++dcje_qpvb3=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++dcjc_qpvb3=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++Abf_qpvb3=0.000e+00
++Ais_qpvb3=0.000e+00
++Aise_qpvb3=0.000e+00
++Arb_qpvb3=0.000e+00
+*qpvc3:
++dis_qpvc3=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++dbf_qpvc3=max(5.000e-01,1.000e+00-(xsf__bip*8.333e-02))
++dvaf_qpvc3=min(1.400e+00,1.000e+00+(xsf__bip*6.667e-02))
++dikf_qpvc3=max(6.000e-01,1.000e+00-(xsf__bip*6.667e-02))
++drb_qpvc3=min(1.120e+00,1.000e+00+(xsf__bip*2.000e-02))
++dcje_qpvc3=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++dcjc_qpvc3=min(1.100e+00,1.000e+00+(xsf__bip*1.667e-02))
++Abf_qpvc3=0.000e+00
++Ais_qpvc3=0.000e+00
++Aise_qpvc3=0.000e+00
++Arb_qpvc3=0.000e+00
+*qnva:
++is_qnva=max(8.002e-01,1.000e+00-(xsf__bip*3.330e-02))
++ikf_qnva=1.000e+00
++re_qnva=min(1.250e+00,1.000e+00+(xsf__bip*4.167e-02))
++cje_qnva=min(1.250e+00,1.000e+00+(xsf__bip*4.167e-02))
++cjc_qnva=min(1.200e+00,1.000e+00+(xsf__bip*3.333e-02))
++tf_qnva=1.000e+00
++vef_qnva=max(5.000e-01,1.000e+00-(xsf__bip*8.333e-02))
++rcx_qnva=min(1.250e+00,1.000e+00+(xsf__bip*4.167e-02))
++rbx_qnva=min(1.300e+00,1.000e+00+(xsf__bip*5.000e-02))
++rci_qnva=min(1.150e+00,1.000e+00+(xsf__bip*2.500e-02))
++rbi_qnva=1.000e+00
++ibei_qnva=min(1.300e+00,1.000e+00+(xsf__bip*5.000e-02))
++iben_qnva=min(1.900e+00,1.000e+00+(xsf__bip*1.500e-01))
++cjep_qnva=min(1.200e+00,1.000e+00+(xsf__bip*3.333e-02))
++cjcp_qnva=min(1.200e+00,1.000e+00+(xsf__bip*3.333e-02))

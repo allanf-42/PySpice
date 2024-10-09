@@ -1,0 +1,37 @@
+
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : all cap
+* Process   : xh018
+* Module    : lp3
+* Spec.     : PS_018_03
+* Revision  : 2.0.2; 2010-09-30
+* ----------------------------------------------------------------------
+*             WORST CASE POWER CONDITION ( Low capacitance ) 
+* ----------------------------------------------------------------------
+*
+.param
+*csandwt3:
++ca_csandwt3=max(1.000e-04,1.300e-04-(xsf__cap*5.000e-06))
++cp_csandwt3=max(2.812e-11,3.700e-11-(xsf__cap*1.480e-12))
+*csandwt4:
++ca_csandwt4=max(1.200e-04,1.600e-04-(xsf__cap*6.667e-06))
++cp_csandwt4=max(3.952e-11,5.200e-11-(xsf__cap*2.080e-12))
+*csandwt5:
++ca_csandwt5=max(1.500e-04,2.000e-04-(xsf__cap*8.333e-06))
++cp_csandwt5=max(5.624e-11,7.400e-11-(xsf__cap*2.960e-12))
+*cmm:
++ca_cmm=max(8.500e-04,1.000e-03-(xsf__cap*2.500e-05))
++cp_cmm=max(1.292e-10,1.700e-10-(xsf__cap*6.800e-12))
++AC_cmm=0.000e+00
+*cdmm:
++ca_cdmm=max(1.700e-03,2.000e-03-(xsf__cap*5.000e-05))
++cp_cdmm=max(2.584e-10,3.400e-10-(xsf__cap*1.360e-11))
+*ctmm:
++ca_ctmm=max(2.550e-03,3.000e-03-(xsf__cap*7.500e-05))
++cp_ctmm=max(3.876e-10,5.100e-10-(xsf__cap*2.040e-11))
+*cp1sub:
++ca_cp1sub=max(7.788e-05,8.850e-05-(xsf__cap*1.770e-06))
++cp_cp1sub=max(1.186e-11,1.560e-11-(xsf__cap*6.240e-13))

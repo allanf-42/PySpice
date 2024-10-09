@@ -1,0 +1,40 @@
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : Capacitors
+* Process   : xh018
+* Module    : lp3mos
+* Spec.     : PS_018_03
+* Revision  : 2.0.7; 2010-11-26
+* ----------------------------------------------------------------------
+.lib tm
+.include './models/cap/tm_cap.par'
+.include './models/cap/csandwt3.mod'
+.include './models/cap/csandwt4.mod'
+.include './models/cap/csandwt5.mod'
+.include './models/cap/cmm.mod'
+.include './models/cap/cdmm.mod'
+.include './models/cap/ctmm.mod'
+.include './models/cap/cp1sub.mod'
+.endl
+.lib wp
+.include './models/cap/wp_cap.par'
+.include './models/cap/csandwt3.mod'
+.include './models/cap/csandwt4.mod'
+.include './models/cap/csandwt5.mod'
+.include './models/cap/cmm.mod'
+.include './models/cap/cdmm.mod'
+.include './models/cap/ctmm.mod'
+.include './models/cap/cp1sub.mod'
+.endl
+.lib ws
+.include './models/cap/ws_cap.par'
+.include './models/cap/csandwt3.mod'
+.include './models/cap/csandwt4.mod'
+.include './models/cap/csandwt5.mod'
+.include './models/cap/cmm.mod'
+.include './models/cap/cdmm.mod'
+.include './models/cap/ctmm.mod'
+.include './models/cap/cp1sub.mod'
+.endl

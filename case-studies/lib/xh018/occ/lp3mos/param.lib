@@ -1,0 +1,56 @@
+* ---------------------------------------------------------------------------
+*  xh018 occ library file version v3.0 generated at Mon Aug 16 13:12:47 2010
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : HSPICE
+* Device    : all
+* Process   : XH018
+* Spec.     : PS_018_03
+* Revision  : 2.0.2; 2009-11-03 hli(6662)
+* ----------------------------------------------------------------------
+*
+.lib 3s
+.param xsf__=3
+.param xsf__bip=3
+.param xsf__bsim3v3=3
+.param xsf__cap=3
+.param xsf__dio=3
+.param xsf__res=3
+.endl
+*
+.lib 4s
+.param xsf__=4
+.param xsf__bip=4
+.param xsf__bsim3v3=4
+.param xsf__cap=4
+.param xsf__dio=4
+.param xsf__res=4
+.endl
+*
+.lib 5s
+.param xsf__=5
+.param xsf__bip=5
+.param xsf__bsim3v3=5
+.param xsf__cap=5
+.param xsf__dio=5
+.param xsf__res=5
+.endl
+*
+.lib 6s
+.param xsf__=6
+.param xsf__bip=6
+.param xsf__bsim3v3=6
+.param xsf__cap=6
+.param xsf__dio=6
+.param xsf__res=6
+.endl
+*
+.lib 2s
+.param xsf__=2
+.param xsf__bip=2
+.param xsf__bsim3v3=2
+.param xsf__cap=2
+.param xsf__dio=2
+.param xsf__res=2
+.endl

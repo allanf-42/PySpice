@@ -1,0 +1,54 @@
+
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : all dio
+* Process   : xh018
+* Module    : lp3
+* Spec.     : PS_018_03
+* Revision  : 2.0.1; 2009-10-16
+* ----------------------------------------------------------------------
+*             TYPICAL MEAN CONDITION ( Typical capacitance ) 
+* ----------------------------------------------------------------------
+*
+.param
+*dn:
++cj_dn=1.120e-03
++cjsw_dn=2.600e-10
+*dp:
++cj_dp=9.800e-04
++cjsw_dp=1.700e-10
+*dnw:
++cj_dnw=1.200e-04
++cjsw_dnw=4.700e-10
+*dn3:
++cj_dn3=8.700e-04
++cjsw_dn3=1.900e-10
+*dp3:
++cj_dp3=1.000e-03
++cjsw_dp3=1.800e-10
+*dnw3:
++cj_dnw3=1.200e-04
++cjsw_dnw3=4.700e-10
+*dpdnw:
++cj_dpdnw=9.800e-04
++cjsw_dpdnw=1.700e-10
+*ddnw:
++cj_ddnw=8.000e-05
++cjsw_ddnw=7.200e-10
+*dipdnw:
++cj_dipdnw=3.300e-04
++cjsw_dipdnw=3.800e-10
+*dnhpw:
++cj_dnhpw=7.800e-04
++cjsw_dnhpw=9.000e-10
+*dphnw:
++cj_dphnw=8.300e-04
++cjsw_dphnw=7.000e-10
+*dhpw:
++cj_dhpw=1.800e-04
++cjsw_dhpw=4.400e-10
+*dhnw:
++cj_dhnw=1.100e-04
++cjsw_dhnw=2.400e-10

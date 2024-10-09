@@ -1,0 +1,66 @@
+* ---------------------------------------------------------------------------
+*  xh018 occ library file version v3.0 generated at Mon Aug 16 13:12:47 2010
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : Diodes
+* Process   : xh018
+* Module    : lp3mos
+* Spec.     : PS_018_03
+* Revision  : 2.0.6; 2010-09-30
+* ----------------------------------------------------------------------
+.lib tm
+.include './models/dio/tm_dio.par'
+.include './models/dio/dn.mod'
+.include './models/dio/dp.mod'
+.include './models/dio/dnw.mod'
+.include './models/dio/dn3.mod'
+.include './models/dio/dp3.mod'
+.include './models/dio/dnw3.mod'
+.include './models/dio/dpdnw.mod'
+.include './models/dio/ddnwmv.mod'
+.include './models/dio/ddnw.mod'
+.include './models/dio/dipdnwmv.mod'
+.include './models/dio/dipdnw.mod'
+.include './models/dio/dnhpw.mod'
+.include './models/dio/dphnw.mod'
+.include './models/dio/dhpw.mod'
+.include './models/dio/dhnw.mod'
+.endl
+.lib wp
+.include './models/dio/wp_dio.par'
+.include './models/dio/dn.mod'
+.include './models/dio/dp.mod'
+.include './models/dio/dnw.mod'
+.include './models/dio/dn3.mod'
+.include './models/dio/dp3.mod'
+.include './models/dio/dnw3.mod'
+.include './models/dio/dpdnw.mod'
+.include './models/dio/ddnwmv.mod'
+.include './models/dio/ddnw.mod'
+.include './models/dio/dipdnwmv.mod'
+.include './models/dio/dipdnw.mod'
+.include './models/dio/dnhpw.mod'
+.include './models/dio/dphnw.mod'
+.include './models/dio/dhpw.mod'
+.include './models/dio/dhnw.mod'
+.endl
+.lib ws
+.include './models/dio/ws_dio.par'
+.include './models/dio/dn.mod'
+.include './models/dio/dp.mod'
+.include './models/dio/dnw.mod'
+.include './models/dio/dn3.mod'
+.include './models/dio/dp3.mod'
+.include './models/dio/dnw3.mod'
+.include './models/dio/dpdnw.mod'
+.include './models/dio/ddnwmv.mod'
+.include './models/dio/ddnw.mod'
+.include './models/dio/dipdnwmv.mod'
+.include './models/dio/dipdnw.mod'
+.include './models/dio/dnhpw.mod'
+.include './models/dio/dphnw.mod'
+.include './models/dio/dhpw.mod'
+.include './models/dio/dhnw.mod'
+.endl

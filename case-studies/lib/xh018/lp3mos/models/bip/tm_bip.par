@@ -1,0 +1,97 @@
+
+* ----------------------------------------------------------------------
+************* XFAB ******** MODEL PARAMETERS ***************************
+* ----------------------------------------------------------------------
+* Simulator : hspice
+* Device    : all bip
+* Process   : xh018
+* Module    : lp3
+* Spec.     : PS_018_03
+* Revision  : 2.0.2; 2010-09-30
+* ----------------------------------------------------------------------
+*             TYPICAL MEAN CONDITION ( Typical BJT ) 
+* ----------------------------------------------------------------------
+*
+.param
+*qpva:
++dis_qpva=1.000e+00
++dbf_qpva=1.000e+00
++dvaf_qpva=1.000e+00
++dikf_qpva=1.000e+00
++drb_qpva=1.000e+00
++dcje_qpva=1.000e+00
++dcjc_qpva=1.000e+00
++Abf_qpva=0.000e+00
++Ais_qpva=0.000e+00
+*qpvb:
++dis_qpvb=1.000e+00
++dbf_qpvb=1.000e+00
++dvaf_qpvb=1.000e+00
++dikf_qpvb=1.000e+00
++drb_qpvb=1.000e+00
++dcje_qpvb=1.000e+00
++dcjc_qpvb=1.000e+00
++Abf_qpvb=0.000e+00
++Ais_qpvb=0.000e+00
+*qpvc:
++dis_qpvc=1.000e+00
++dbf_qpvc=1.000e+00
++dvaf_qpvc=1.000e+00
++dikf_qpvc=1.000e+00
++drb_qpvc=1.000e+00
++dcje_qpvc=1.000e+00
++dcjc_qpvc=1.000e+00
++Abf_qpvc=0.000e+00
++Ais_qpvc=0.000e+00
++Arb_qpvc=0.000e+00
+*qpva3:
++dis_qpva3=1.000e+00
++dbf_qpva3=1.000e+00
++dvaf_qpva3=1.000e+00
++dikf_qpva3=1.000e+00
++drb_qpva3=1.000e+00
++dcje_qpva3=1.000e+00
++dcjc_qpva3=1.000e+00
++Abf_qpva3=0.000e+00
++Ais_qpva3=0.000e+00
++Aise_qpva3=0.000e+00
+*qpvb3:
++dis_qpvb3=1.000e+00
++dbf_qpvb3=1.000e+00
++dvaf_qpvb3=1.000e+00
++dikf_qpvb3=1.000e+00
++drb_qpvb3=1.000e+00
++dcje_qpvb3=1.000e+00
++dcjc_qpvb3=1.000e+00
++Abf_qpvb3=0.000e+00
++Ais_qpvb3=0.000e+00
++Aise_qpvb3=0.000e+00
++Arb_qpvb3=0.000e+00
+*qpvc3:
++dis_qpvc3=1.000e+00
++dbf_qpvc3=1.000e+00
++dvaf_qpvc3=1.000e+00
++dikf_qpvc3=1.000e+00
++drb_qpvc3=1.000e+00
++dcje_qpvc3=1.000e+00
++dcjc_qpvc3=1.000e+00
++Abf_qpvc3=0.000e+00
++Ais_qpvc3=0.000e+00
++Aise_qpvc3=0.000e+00
++Arb_qpvc3=0.000e+00
+*qnva:
++is_qnva=1.000e+00
++ikf_qnva=1.000e+00
++re_qnva=1.000e+00
++cje_qnva=1.000e+00
++cjc_qnva=1.000e+00
++tf_qnva=1.000e+00
++vef_qnva=1.000e+00
++rcx_qnva=1.000e+00
++rbx_qnva=1.000e+00
++rci_qnva=1.000e+00
++rbi_qnva=1.000e+00
++ibei_qnva=1.000e+00
++iben_qnva=1.000e+00
++cjep_qnva=1.000e+00
++cjcp_qnva=1.000e+00
